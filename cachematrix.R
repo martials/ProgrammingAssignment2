@@ -1,7 +1,9 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Programming Assignment 2: Lexical Scoping
+## Computation and starage of matrix inverse
 
-## creates a cache matrix function (this is a function object to store the data i.e. inverse of an matrix)
+
+## creates a cache matrix function, this is a function object to store and retrive a matrix 
+## and its inverse i.e. inverse of an matrix. Here we have the data.
 
 makeCacheMatrix <- function(m = matrix()) {
   inv <- NULL
@@ -12,14 +14,13 @@ makeCacheMatrix <- function(m = matrix()) {
   get <- function() m
   setinverse <- function(x) inv <<- x
   getinverse <- function() inv
-  
   list(set = set, get = get,
        setinverse = setinverse,
        getinverse = getinverse)
 }
 
-
-## provides the inverse of a matrix by eighter computing it or returning a cached value (functionality)
+## provides the inverse of a matrix by eighter computing it or returning a cached value from 
+## a makeCacheMatrix function object. Here we have the functionality
 
 cacheinverse <- function(cm, ...) {
   inv <- cm$getinverse()
